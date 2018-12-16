@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<div class="jumbotron text-center my-card">
+	<h3 class="display-4">SignUp</h3>
+	<form action="{% url 'signup' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form|crispy}}
+		<input type="submit" value="SignUp" class="btn" style="background-color: #708f8f; color: black;">
+	</form>
+</div>
+{% endblock content %}
